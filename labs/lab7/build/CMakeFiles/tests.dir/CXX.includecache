@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/csugrads/murp1878/cs1521/labs/lab7/rot5_13.cpp
+rot5_13.h
+/home/csugrads/murp1878/cs1521/labs/lab7/rot5_13.h
+
+/home/csugrads/murp1878/cs1521/labs/lab7/rot5_13.h
+

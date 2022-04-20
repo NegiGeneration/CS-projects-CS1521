@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/csugrads/murp1878/cs1521/projects/project1/arithmetic.cpp
+iostream
+-
+math.h
+/home/csugrads/murp1878/cs1521/projects/project1/math.h
+
+/home/csugrads/murp1878/cs1521/projects/project1/main.cpp
+iostream
+-
+math.h
+/home/csugrads/murp1878/cs1521/projects/project1/math.h
+
+/home/csugrads/murp1878/cs1521/projects/project1/math.h
+

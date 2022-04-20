@@ -1,0 +1,4 @@
+/home/csugrads/murp1878/cs1521/labs/lab7/build/CMakeFiles/rebuild_cache.dir
+/home/csugrads/murp1878/cs1521/labs/lab7/build/CMakeFiles/edit_cache.dir
+/home/csugrads/murp1878/cs1521/labs/lab7/build/CMakeFiles/tests.dir
+/home/csugrads/murp1878/cs1521/labs/lab7/build/CMakeFiles/lab7.dir

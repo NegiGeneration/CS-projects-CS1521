@@ -1,0 +1,414 @@
+cScript started on 2022-01-25 18:14:05-06:00 [TERM="xterm-256color" TTY="/dev/pts/23" COLUMNS="120" LINES="30"]
+1% pwd
+
+/home/csugrads/murp1878/cs1521/projects/project1
+2% ls -l
+
+total 36
+-rw------- 1 murp1878 student    0 Jan 17 22:37 '#arithmetic#'
+-rw------- 1 murp1878 student 1042 Jan 25 17:59  arithmetic.cpp
+-rw------- 1 murp1878 student 1023 Jan 25 17:34  arithmetic.cpp~
+drwx------ 3 murp1878 student 4096 Jan 25 18:10  build
+-rw------- 1 murp1878 student  356 Jan 25 15:40  CMakeLists.txt
+-rw------- 1 murp1878 student  323 Jan 24 20:24  CMakeLists.txt~
+-rw------- 1 murp1878 student 3053 Jan 25 17:56  main.cpp
+-rw------- 1 murp1878 student 2997 Jan 25 15:33  main.cpp~
+-rw------- 1 murp1878 student  986 Jan 25 17:57  math.h
+-rw------- 1 murp1878 student  985 Jan 25 01:01  math.h~
+-rw------- 1 murp1878 student    0 Jan 25 18:14  typescript.txt
+3% cat -n C[KCMakeLists.txt
+
+     1	#Name: Isaac Murphy ID: MURP1878
+     2	cmake_minimum_required(VERSION 3.16.3)
+     3	
+     4	project ("Project 1"
+     5	  VERSION 0.0.0
+     6	  DESCRIPTION "CS 1521 Project 1"
+     7	  LANGUAGES CXX)
+     8	
+     9	add_compile_options(-Wall -Wextra -Wpedantic)
+    10	
+    11	set(CMAKE_CXX_STANDARD 17)
+    12	set(CMAKE_CXX_STANDARD_REQUIRED ON)
+    13	set(CMAKE_CXX_EXTENSIONS OFF)
+    14	
+    15	add_executable(project1
+    16	  main.cpp
+    17	  arithmetic.cpp)
+4% C[Kcat -n main.cpp
+
+     1	/** main.cpp
+     2	 *@Isaac Murphy
+     3	 *@5741848
+     4	 *@Murp1878
+     5	 */
+     6	#include <iostream>
+     7	using namespace std;
+     8	#include "math.h"
+     9	
+    10	int main() {
+    11	  
+    12	  Stat seq; // sequence object
+    13	  
+    14	    
+    15	  cout << " " << endl;
+    16	  cout << "Test 1: Empty sequence " << endl; 
+    17	
+    18	  cout << "Total " << seq.GetTotal() << endl;
+    19	  cout << "last " << seq.GetLast() << endl;
+    20	  cout << "sum " << seq.GetSum() << endl;
+    21	  cout << "Mean " << seq.GetMean() << endl;
+    22	  cout << "Max " << seq.GetMax() << endl;
+    23	  cout << "Min " << seq.GetMin() << endl;
+    24	  seq.clear();
+    25	  
+    26	  cout << " " << endl;
+    27	  cout << "Test 2: Single value " << endl;
+    28	  seq.input(4.3);
+    29	
+    30	  cout << "Total " << seq.GetTotal() << endl;
+    31	  cout << "Last " << seq.GetLast() << endl;
+    32	  cout << "Mean " << seq.GetMean() << endl;
+    33	  cout << "Sum " << seq.GetSum() << endl;
+    34	  cout << "Max " << seq.GetMax() << endl;
+    35	  cout << "Min " << seq.GetMin() << endl;
+    36	  seq.clear();
+    37	  
+    38	  cout << " " << endl;
+    39	  cout << "Test 3: Increasing " << endl;
+    40	  seq.input(3.2);
+    41	  seq.input(3.5);
+    42	  seq.input(4.7);
+    43	  seq.input(8.5);
+    44	  seq.input(9.54);
+    45	  
+    46	  
+    47	  cout << "Total " << seq.GetTotal() << endl;
+    48	  cout << "Last " << seq.GetLast() << endl;
+    49	  cout << "Mean " << seq.GetMean() << endl;
+    50	  cout << "Sum " << seq.GetSum() << endl;
+    51	  cout << "Max " << seq.GetMax() << endl;
+    52	  cout << "Min " << seq.GetMin() << endl;
+    53	  seq.clear();
+    54	
+    55	  cout << " " << endl;
+    56	  cout << "Test 4: Decreasing values " << endl;
+    57	  seq.input(19.3);
+    58	  seq.input(18.5);
+    59	  seq.input(14.5);
+    60	  seq.input(12.4);
+    61	  seq.input(10.4);
+    62	
+    63	  cout << "Total " << seq.GetTotal() << endl;
+    64	  cout << "Last " << seq.GetLast() << endl;
+    65	  cout << "Mean " << seq.GetMean() << endl;
+    66	  cout << "Sum " << seq.GetSum() << endl;
+    67	  cout << "Max " << seq.GetMax() << endl;
+    68	  cout << "Min " << seq.GetMin() << endl;
+    69	  seq.clear();
+    70	
+    71	  cout << " " << endl;
+    72	  cout << "Test 5: Random Sequence " << endl;
+    73	  seq.input(34.4);
+    74	  seq.input(66.4);
+    75	  seq.input(69.3);
+    76	  seq.input(3.3);
+    77	  seq.input(4.55);
+    78	
+    79	  cout << "Total " << seq.GetTotal() << endl;
+    80	  cout << "Last " << seq.GetLast() << endl;
+    81	  cout << "Mean " << seq.GetMean() << endl;
+    82	  cout << "Sum " << seq.GetSum() << endl;
+    83	  cout << "Max " << seq.GetMax() << endl;
+    84	  cout << "Min " << seq.GetMin() << endl;
+    85	  seq.clear();
+    86	  
+    87	  cout << " " << endl;
+    88	  cout << "Test 6: Constant Sequence " << endl;
+    89	  seq.input(3.4);
+    90	  seq.input(3.4);
+    91	  seq.input(3.4);
+    92	  seq.input(3.4);
+    93	  seq.input(3.4);
+    94	
+    95	  cout << "Total " << seq.GetTotal() << endl;
+    96	  cout << "Last " << seq.GetLast() << endl;
+    97	  cout << "Mean " << seq.GetMean() << endl;
+    98	  cout << "Sum " << seq.GetSum() << endl;
+    99	  cout << "Max " << seq.GetMax() << endl;
+   100	  cout << "Min " << seq.GetMin() << endl;
+   101	  seq.clear();
+   102	
+   103	  cout << " " << endl;
+   104	  cout << "Test 7: Sequence sum to zero " << endl;
+   105	  seq.input(5.4);
+   106	  seq.input(-5.4);
+   107	
+   108	  cout << "Total " << seq.GetTotal() << endl;
+   109	  cout << "Last " << seq.GetLast() << endl;
+   110	  cout << "Mean " << seq.GetMean() << endl;
+   111	  cout << "Sum " << seq.GetSum() << endl;
+   112	  cout << "Max " << seq.GetMax() << endl;
+   113	  cout << "Min " << seq.GetMin() << endl;
+   114	  seq.clear();
+   115	
+   116	  
+   117	  
+   118	} // end of main
+5% cat -n am[K[Kmath.h
+
+     1	/** Header File
+     2	 *@Isaac Murphy
+     3	 *
+     4	 *@5741848
+     5	 *
+     6	 *@Murp1878
+     7	 */
+     8	#ifndef math_
+     9	#define math_
+    10	
+    11	class Stat {
+    12	
+    13	 private:
+    14	  
+    15	  double total;
+    16	  double last;
+    17	  double sum;
+    18	  double max;
+    19	  double min;
+    20	  
+    21	
+    22	public:
+    23	  /* default constructor */
+    24	  Stat();
+    25	  /** Input Method
+    26	  *@pre: sets values
+    27	  *
+    28	  *@post: initalizes values
+    29	  *
+    30	  *@param: NA
+    31	  *
+    32	  *@return: NA
+    33	  */
+    34	  void input(double value);
+    35	  /** Total Return
+    36	  *@pre: NA
+    37	  *
+    38	  *@post: NA
+    39	  *
+    40	  *@param: NA
+    41	  *
+    42	  *@return NA 
+    43	  */ 
+    44	  double GetTotal(); 
+    45	  /** Returns last method 
+    46	  * 
+    47	  *@return NA
+    48	  */
+    49	  double GetLast();
+    50	  /** Returns Sum method
+    51	  *
+    52	  *@pre: NA
+    53	  *
+    54	  *@return: NA
+    55	  */
+    56	  double GetSum();
+    57	  /** Returns mean
+    58	  *
+    59	  *@pre: NA
+    60	  *
+    61	  *@return: NA
+    62	  */
+    63	  double GetMean();
+    64	  /** Returns Minimum
+    65	  *
+    66	  *@pre: NA
+    67	  *
+    68	  *@returns: NA
+    69	  */
+    70	  double GetMin();
+    71	  /** Returns Maximum
+    72	  *
+    73	  *@pre: NA
+    74	  *
+    75	  *@returns: NA
+    76	  */
+    77	  double GetMax();
+    78	  /** Clear Method
+    79	  *
+    80	  *@pre: 
+    81	  *
+    82	  *returns: NA
+    83	  */
+    84	  void clear();   
+    85	
+    86	};
+    87	
+    88	#endif
+    89	
+6% cat -n arithmetic.cpp
+
+     1	/** Arithmetic.cpp
+     2	 *@Isaac Muprhy
+     3	 *@5741848
+     4	 *@Murp1878
+     5	 */
+     6	
+     7	#include <iostream>
+     8	#include "math.h"
+     9	
+    10	
+    11	Stat::Stat() {
+    12	  // counts of the amount of values 
+    13	  total = 0;
+    14	  // stores the last value
+    15	  last = 0;
+    16	  // sum of all values
+    17	  sum = 0;
+    18	  // largest number in the sequence
+    19	  max = 0;
+    20	  // smalles number in the sequence
+    21	  min = 0;
+    22	}
+    23	
+    24	void Stat::input(double value) {
+    25	
+    26	  
+    27	  
+    28	  if (total == 0) {
+    29	    // sets max an min to zero
+    30	    max = value;
+    31	    min = value;
+    32	  } 
+    33	  
+    34	  if (value < min) {
+    35	    min = value;
+    36	  }
+    37	  if (value > max) {
+    38	    max = value;
+    39	  }
+    40	   // calculates the sum
+    41	    sum += value;
+    42	    last = value;
+    43	   // increments total adding 1 each time
+    44	   total++;
+    45	  
+    46	}
+    47	
+    48	double Stat::GetMin() {
+    49	  return min;
+    50	}
+    51	
+    52	double Stat::GetMax() {
+    53	  return max;
+    54	}
+    55	
+    56	void Stat:: clear() {
+    57	  total = 0;
+    58	  last = 0;
+    59	  sum = 0;
+    60	  max = 0;
+    61	  min = 0;
+    62	}
+    63	
+    64	double Stat::GetTotal() {
+    65	  return total;
+    66	}
+    67	
+    68	double Stat::GetLast() {
+    69	  return last;
+    70	}
+    71	
+    72	double Stat::GetSum() {
+    73	  return sum;
+    74	}
+    75	
+    76	double Stat::GetMean() {
+    77	  return sum / total;
+    78	}
+    79	
+    80	
+    81	  
+    82	    
+    83	
+    84	  
+    85	  
+    86	     
+7% pw[K[Kl[Kcd .. [K[Kbuid[Kld
+
+8% ls
+
+CMakeCache.txt	CMakeFiles  cmake_install.cmake  Makefile
+9% make
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/csugrads/murp1878/cs1521/projects/project1/build
+[35m[1mScanning dependencies of target project1[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/project1.dir/main.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/project1.dir/arithmetic.cpp.o[0m
+[100%] [32m[1mLinking CXX executable project1[0m
+[100%] Built target project1
+10% ./project1
+
+ 
+Test 1: Empty sequence 
+Total 0
+last 0
+sum 0
+Mean -nan
+Max 0
+Min 0
+ 
+Test 2: Single value 
+Total 1
+Last 4.3
+Mean 4.3
+Sum 4.3
+Max 4.3
+Min 4.3
+ 
+Test 3: Increasing 
+Total 5
+Last 9.54
+Mean 5.888
+Sum 29.44
+Max 9.54
+Min 3.2
+ 
+Test 4: Decreasing values 
+Total 5
+Last 10.4
+Mean 15.02
+Sum 75.1
+Max 19.3
+Min 10.4
+ 
+Test 5: Random Sequence 
+Total 5
+Last 4.55
+Mean 35.59
+Sum 177.95
+Max 69.3
+Min 3.3
+ 
+Test 6: Constant Sequence 
+Total 5
+Last 3.4
+Mean 3.4
+Sum 17
+Max 3.4
+Min 3.4
+ 
+Test 7: Sequence sum to zero 
+Total 2
+Last -5.4
+Mean 0
+Sum 0
+Max 5.4
+Min -5.4
+11% exit
+
+exit
+
+Script done on 2022-01-25 18:15:36-06:00 [COMMAND_EXIT_CODE="0"]
